@@ -23,31 +23,27 @@ Every specification in this organization covers **100% of the closed-source on-S
 
 ---
 
-## SoC Specification and Repositories
+## SoC Specifications
 
 ### [SpacemiT K1](spacemit-k1.md)
 
 Full SoC firmware and blob map covering LPDDR4X training, PowerVR BXE-2-32 GPU, Arm China Linlon V5 VPU (2 cores), open-source RCPU/ESOS, blob-free peripherals, signature enforcement, and off-SoC board modules.
 
-Repositories:
-
-| Hardware IP | Target Host ABI / Driver | Repository |
+| Hardware IP | Target Host ABI / Driver | Documentation |
 |---|---|---|
-| **SpacemiT K1 DDR** (LPDDR4 / LPDDR4X) | Mainline U-Boot SPL (`ddr_fw.bin` slot) | [NoBlobs-docsClean/SpacemiT_K1_DDR](https://github.com/NoBlobs-docsClean/SpacemiT_K1_DDR) |
-| **PowerVR Rogue BXE-2-32** (`36.29.52.182`) | Mainline Linux `powervr` DRM + Mesa `pvr` | [NoBlobs-docsClean/Imagination_BXE-2-32](https://github.com/NoBlobs-docsClean/Imagination_BXE-2-32) |
-| **Arm China Linlon V5 VPU** (`0x56635002`, 2 cores) | Vendor Linux `mvx` driver | [NoBlobs-docsClean/Linlon_V5](https://github.com/NoBlobs-docsClean/Linlon_V5) |
+| **SpacemiT K1 DDR** (LPDDR4 / LPDDR4X) | Mainline U-Boot SPL (`ddr_fw.bin` slot) | [SpacemiT_K1_DDR](https://noblobs-docsclean.github.io/SpacemiT_K1_DDR/) |
+| **PowerVR Rogue BXE-2-32** (`36.29.52.182`) | Mainline Linux `powervr` DRM + Mesa `pvr` | [Imagination_BXE-2-32](https://noblobs-docsclean.github.io/Imagination_BXE-2-32/) |
+| **Arm China Linlon V5 VPU** (`0x56635002`, 2 cores) | Vendor Linux `mvx` driver | [Linlon_V5](https://noblobs-docsclean.github.io/Linlon_V5/) |
 
 ### [SpacemiT K3](spacemit-k3.md)
 
 Full SoC firmware and blob map covering LPDDR5 PMU training, PowerVR BXM-4-64 GPU, Arm China Linlon V5 VPU (4 cores), open-source dual-RT24 RCPU/ESOS, open-source boot chain (OpenSBI + U-Boot / EDK2 UEFI), signature enforcement, and off-SoC modules.
 
-Repositories:
-
-| Hardware IP | Target Host ABI / Driver | Repository |
+| Hardware IP | Target Host ABI / Driver | Documentation |
 |---|---|---|
-| **SpacemiT K3 DDR** (LPDDR5 PMU ARC) | Vendor U-Boot SPL | [NoBlobs-docsClean/SpacemiT_K3_DDR](https://github.com/NoBlobs-docsClean/SpacemiT_K3_DDR) |
-| **PowerVR Rogue BXM-4-64** (`36.56.104.183`) | Mainline Linux `powervr` DRM + Mesa `pvr` | [NoBlobs-docsClean/Imagination_BXM-4-64](https://github.com/NoBlobs-docsClean/Imagination_BXM-4-64) |
-| **Arm China Linlon V5 VPU** (`0x56635002`, 4 cores) | Vendor Linux `mvx` driver | [NoBlobs-docsClean/Linlon_V5](https://github.com/NoBlobs-docsClean/Linlon_V5) |
+| **SpacemiT K3 DDR** (LPDDR5 PMU ARC) | Vendor U-Boot SPL | [SpacemiT_K3_DDR](https://noblobs-docsclean.github.io/SpacemiT_K3_DDR/) |
+| **PowerVR Rogue BXM-4-64** (`36.56.104.183`) | Mainline Linux `powervr` DRM + Mesa `pvr` | [Imagination_BXM-4-64](https://noblobs-docsclean.github.io/Imagination_BXM-4-64/) |
+| **Arm China Linlon V5 VPU** (`0x56635002`, 4 cores) | Vendor Linux `mvx` driver | [Linlon_V5](https://noblobs-docsclean.github.io/Linlon_V5/) |
 
 ---
 

@@ -19,9 +19,9 @@ Every closed-source **on-SoC** firmware blob on the K3 (DDR PMU training, GPU, a
 
 | Hardware Block | Firmware / Target Interface | Status | Cryptographic Signature Enforced? | Clean-Room / Open-Source Link |
 |---|---|---|---|---|
-| **DDR Training** (LPDDR5 & LPDDR4X, dual controller) | ARCv2 EM PMU full-training & quickboot firmware (embedded in FSBL) | **Clean-room spec available** | **No** on reference boards (FSBL has RSA-2048 structures, `CONFIG_SPACEMIT_SECURE_BOARD` disabled; vendor keys provided) | [SpacemiT_K3_DDR](https://github.com/NoBlobs-docsClean/SpacemiT_K3_DDR) |
-| **GPU — PowerVR Rogue BXM-4-64 MC1** (BVNC `36.56.104.183`) | `powervr/rogue_36.56.104.183_v1.fw` (mainline `drm/imagination` ABI 1.1) | **Clean-room spec available** | **No** (`RGX_FW_SIGNED` disabled; BVNC/header check only) | [Imagination_BXM-4-64](https://github.com/NoBlobs-docsClean/Imagination_BXM-4-64) |
-| **VPU — Arm China Linlon V5** (`0x56635002`, 4 cores) | `linlon-v52_v76-80-2/*.fwb` (MVE 3.5 protocol, GPL-2.0 `mvx` driver, RASC ISA) | **Clean-room spec available** | **No** (180-byte `mvx_fw_header` + size check only) | [Linlon_V5](https://github.com/NoBlobs-docsClean/Linlon_V5) |
+| **DDR Training** (LPDDR5 & LPDDR4X, dual controller) | ARCv2 EM PMU full-training & quickboot firmware (embedded in FSBL) | **Clean-room spec available** | **No** on reference boards (FSBL has RSA-2048 structures, `CONFIG_SPACEMIT_SECURE_BOARD` disabled; vendor keys provided) | [SpacemiT_K3_DDR](https://noblobs-docsclean.github.io/SpacemiT_K3_DDR/) |
+| **GPU — PowerVR Rogue BXM-4-64 MC1** (BVNC `36.56.104.183`) | `powervr/rogue_36.56.104.183_v1.fw` (mainline `drm/imagination` ABI 1.1) | **Clean-room spec available** | **No** (`RGX_FW_SIGNED` disabled; BVNC/header check only) | [Imagination_BXM-4-64](https://noblobs-docsclean.github.io/Imagination_BXM-4-64/) |
+| **VPU — Arm China Linlon V5** (`0x56635002`, 4 cores) | `linlon-v52_v76-80-2/*.fwb` (MVE 3.5 protocol, GPL-2.0 `mvx` driver, RASC ISA) | **Clean-room spec available** | **No** (180-byte `mvx_fw_header` + size check only) | [Linlon_V5](https://noblobs-docsclean.github.io/Linlon_V5/) |
 | **RCPU / ESOS** (2× RT24 / CVA6 RV64GC, 614.4 MHz) | `esos.itb` (`rt24_os0_rcpu.elf` / `rt24_os1_rcpu.elf`, started by SPL; Linux attaches) | **Open source** (Apache-2.0) | **No** (CRC32 FIT only; `CONFIG_SPL_FIT_SIGNATURE` disabled) | [spacemit-com/esos](https://github.com/spacemit-com/esos) / [esos-lite](https://github.com/spacemit-com/esos-lite) |
 | **Boot Chain** (FSBL/SPL, OpenSBI, U-Boot or EDK2 UEFI, optional OP-TEE) | `FSBL.bin`, `fw_dynamic.itb`, `u-boot.itb` or EDK2 FIT | **Open source** | **No** on reference boards (RSA-2048 `ROTPK`/`cert0`/`signature1` present but unenforced; vendor keys provided in U-Boot tree) | [Mainline U-Boot](https://github.com/u-boot/u-boot), [Mainline OpenSBI](https://github.com/riscv-software-src/opensbi) ([Vendor U-Boot](https://github.com/spacemit-com/uboot-2022.10), [Vendor OpenSBI](https://github.com/spacemit-com/opensbi), [Vendor EDK2](https://github.com/spacemit-com/edk2)) |
 | **AI (60 TOPS)** | 8× A100 CPU cores with SpacemiT-IME2 instructions (no dedicated NPU) | **No firmware blob** | N/A | — |
@@ -34,6 +34,8 @@ Every closed-source **on-SoC** firmware blob on the K3 (DDR PMU training, GPU, a
 | **Embedded Controller (ChromeOS EC)** | eSPI (`google,cros-ec-espi`) | Closed, **external board-specific MCU** (outside the K3 SoC) | **No** (updater checks manifest MD5/SHA-256 only) |
 | **Wi-Fi — Realtek RTL8852BE** | PCIe (`rtw89_8852be`) | Closed, **external chip outside the K3 SoC** | **Yes** (`rtw89` hardware secure boot by eFuse) |
 | **Bluetooth — Realtek RTL8852BU** | USB (`0bda:b85b`, `btrtl`) | Closed, **external chip outside the K3 SoC** | **No** (EPATCH header and config magic check only) |
+
+*(Other K1 boards may populate alternative external radio modules.)*
 
 
 ---
