@@ -1,0 +1,31 @@
+title: NoBlobs Clean-Room Documentation Portal
+description: Independent clean-room hardware and firmware interface specifications for RISC-V SoCs
+url: https://noblobs-docsclean.github.io
+baseurl: ""
+
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: false
+
+search_enabled: true
+heading_anchors: true
+color_scheme: light
+
+aux_links:
+  "GitHub Organization":
+    - "https://github.com/NoBlobs-docsClean"
+
+aux_links_new_tab: true
+
+footer_content: >-
+  Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a>.
+  Clean-room hardware and ABI specifications for independent open-source firmware implementations.
+
+mermaid:
+  version: "10.9.1"
